@@ -66,6 +66,7 @@ To loop over a sequence in reverse,
 
 '''
 >>> basket = ['apple', 'orange', 'apple', 'pear', 'orange', 'banana']
+>>> basket.sort()
 >>> for i in sorted(basket):
 ...     print(i)
 ...

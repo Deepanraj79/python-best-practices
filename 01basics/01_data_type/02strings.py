@@ -79,7 +79,7 @@ mechanism, but in some cases this might be exactly what you’re looking for.
 # Multi line strings
 
 '''
->>> print("""a
+>>> print("""
     b
     c""")
 a
