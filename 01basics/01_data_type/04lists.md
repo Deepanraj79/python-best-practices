@@ -1,8 +1,8 @@
-"""Python list"""
+# Python list
 
-# Del statement
-'''
+## Del statement
 
+```python
 >>> a = [-1, 1, 66.25, 333, 333, 1234.5]
 >>> del a[0]
 >>> a
@@ -13,30 +13,29 @@
 >>> del a[:]
 >>> a
 []
-'''
+```
 
-# Looping Technique
+## Looping Technique
 
-# enumerate()
+### enumerate()
 
-'''
 When looping through dictionaries, the key and corresponding value can be retrieved at the same time
 using the items() method.
 
+```python
 >>> for i, v in enumerate(['tic', 'tac', 'toe']):
 ...     print(i, v)
 ...
 0 tic
 1 tac
 2 toe
+```
 
-'''
+### zip()
 
-# zip()
-
-'''
 To loop over two or more sequences at the same time, the entries can be paired with the zip() function.
 
+```python
 >>> questions = ['name', 'quest', 'favorite color']
 >>> answers = ['lancelot', 'the holy grail', 'blue']
 >>> for q, a in zip(questions, answers):
@@ -45,13 +44,13 @@ To loop over two or more sequences at the same time, the entries can be paired w
 What is your name?  It is lancelot.
 What is your quest?  It is the holy grail.
 What is your favorite color?  It is blue.
-'''
+```
 
-# reversed()
+### reversed()
 
-'''
 To loop over a sequence in reverse,
 
+```python
 >>> for i in reversed(range(1, 10, 2)):
 ...     print(i)
 ...
@@ -60,11 +59,11 @@ To loop over a sequence in reverse,
 5
 3
 1
-'''
+```
 
-# sorted()
+## sorted()
 
-'''
+```python
 >>> basket = ['apple', 'orange', 'apple', 'pear', 'orange', 'banana']
 >>> basket.sort()
 >>> for i in sorted(basket):
@@ -76,32 +75,33 @@ banana
 orange
 orange
 pear
-'''
+```
 
-# List Comprehensions
+## List Comprehensions
 
-'''
 List comprehensions provide a concise way to create lists. 
 
+```python
 >>> squares = []
 >>> for x in range(10):
 ...     squares.append(x**2)
 ...
 >>> squares
 [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
+```
 
-
+```python
 squares = [x**2 for x in range(10)]
+```
 
-
+```python
 >>> [(x, y) for x in [1,2,3] for y in [3,1,4] if x != y]
 [(1, 3), (1, 4), (2, 3), (2, 1), (2, 4), (3, 1), (3, 4)]
+```
 
-'''
+##Nested List Comprehensions
 
-# Nested List Comprehensions
-
-'''
+```python
 >>> matrix = [
 ...     [1, 2, 3, 4],
 ...     [5, 6, 7, 8],
@@ -109,14 +109,13 @@ squares = [x**2 for x in range(10)]
 ... ]
 >>> [[row[i] for row in matrix] for i in range(4)]
 [[1, 5, 9], [2, 6, 10], [3, 7, 11], [4, 8, 12]]
+```
 
-'''
+## List methods
 
-# List methods
+### .pop()
 
-# .pop()
-
-'''
+```python
 In [29]: li.pop??
 Signature: li.pop(index=-1, /)
 Docstring:
@@ -124,11 +123,11 @@ Remove and return item at index (default last).
 
 Raises IndexError if list is empty or index is out of range.
 Type:      builtin_function_or_method
-'''
+```
 
-# .sort()
+### .sort()
 
-'''
+```python
 cities = ['Mumbai', 'London', 'Paris', 'New York']
 cities.sort(key=len)
 
@@ -137,25 +136,21 @@ cities.sort(key=str.lower)
 
 cities = ['Mumbai', 'London', 'Paris', 'New York']
 cities.sort(key=min, reverse=True)
+```
 
-'''
-
-# sorted()
-
-'''
+### sorted()
 Another difference is that the list.sort() method is only defined for lists. In contrast, the sorted() function
 accepts any iterable.
 
-
+```python
 student_tuples = [
     ('john', 'A', 15),
     ('jane', 'B', 12),
     ('dave', 'B', 10),
 ]
 sorted(student_tuples, key=lambda student: student[2])   # sort by age
-'''
-
-'''
+```
+```python
 class Student:
     def __init__(self, name, grade, age):
         self.name = name
@@ -170,4 +165,4 @@ student_objects = [
     Student('dave', 'B', 10),
 ]
 sorted(student_objects, key=lambda student: student.age)   # sort by age
-'''
+```

@@ -1,27 +1,24 @@
-"""
-Ref: https://realpython.com/python-strings/
-"""
-
 # String Formatting
 
+```python
 name = 'John'
 print('Hello, %s' % name)
+```
 
-# 1 “Old Style” String Formatting (% Operator)
+## “Old Style” String Formatting (% Operator)
 
-'''
->>> 'Hello, %s' % FirstName
-"Hello, Bob"
+```python
+>>> 'Hello, %s' % name
+"Hello, John"
 
 >>> 'Hello, %s %s' % ('FirstName', 'LastName')
-"Hello, Bob"
+"Hello, FirstName LastName"
+```
 
-'''
-
-# 2 “New Style” String Formatting (str.format)
-'''
+## “New Style” String Formatting (str.format)
 Python 3 introduced a new way to do string formatting that was also later back-ported to Python 2.7. 
 
+```python
 >>> 'Hello, {}'.format(name)
 'Hello, Bob'
 
@@ -39,13 +36,13 @@ Python 3 introduced a new way to do string formatting that was also later back-p
 
 >>> 'Hello, {first_name} {last_name}'.format_map({'first_name': 'FirstName', 'last_name': 'LastName'})
 'Hello, FirstName LastName'
-'''
+```
 
-# 3 String Interpolation / f-Strings (Python 3.6+)
+## String Interpolation / f-Strings (Python 3.6+)
 
-'''
 Python 3.6 added a new string formatting approach called formatted string literals or “f-strings”.
 
+```python
 >>> name = 'Bob'
 >>> f'Hello, {name}!'
 'Hello, Bob!'
@@ -54,14 +51,14 @@ Python 3.6 added a new string formatting approach called formatted string litera
 >>> b = 10
 >>> f'Five plus ten is {a + b} and not {2 * (a + b)}.'
 'Five plus ten is 15 and not 30.'
-'''
+```
 
-# 4 Template Strings (Standard Library)
+## 4 Template Strings (Standard Library)
 
-'''
 Here’s one more tool for string formatting in Python: template strings. It’s a simpler and less powerful
 mechanism, but in some cases this might be exactly what you’re looking for.
 
+```python
 >>> from string import Template
 >>> t = Template('Hey, $name!')
 >>> t.substitute(name=name)
@@ -71,42 +68,42 @@ mechanism, but in some cases this might be exactly what you’re looking for.
 >>> Template(temp_string).substitute(
 ...     name=name, $error=25)
 'Hey Bob, there is a 25 error!'
-'''
+```
 
-# Note, Don't use the operator + to concatenate the string
+`Note`, Don't use the operator + to concatenate the string
 
+## Multi line strings
 
-# Multi line strings
-
-'''
+```python
 >>> print("""
     b
     c""")
 a
 b
 c
-'''
+```
 
-# List of the Methods of String object
+## To find the List of the Methods of String object
 
-'''
+```python
 >>> my_str = 'my_string'
 >>> dir(my_str)
-'''
+```
 
-'''
-s.count(<sub>[, <start>[, <end>]])
+## s.count(<sub>[, <start>[, <end>]])
 Counts occurrences of a substring in the target string.
 
-
+```python
 >>> 'foo goo moo'.count('oo')
 3
 >>> 'foo goo moo'.count('oo', 0, 8)
 2
+```
 
-s.endswith(<suffix>[, <start>[, <end>]])
+## s.endswith(<suffix>[, <start>[, <end>]])
 Determines whether the target string ends with a given substring.
 
+```python
 >>> 'foobar'.endswith('bar')
 True
 >>> 'foobar'.endswith('baz')
@@ -116,11 +113,12 @@ False
 True
 >>> 'foobar'.endswith('oob', 2, 4)
 False
+```
 
-
-s.startswith(<prefix>[, <start>[, <end>]])
+## s.startswith(<prefix>[, <start>[, <end>]])
 Determines whether the target string starts with a given substring.
 
+```python
 >>> 'foobar'.startswith('foo')
 True
 >>> 'foobar'.startswith('bar')
@@ -130,41 +128,46 @@ False
 True
 >>> 'foobar'.startswith('bar', 3, 2)
 False
+```
 
-s.replace(<old>, <new>[, <count>])
+## s.replace(<old>, <new>[, <count>])
 Replaces occurrences of a substring within a string.
 
+```python
 >>> 'foo bar foo baz foo qux'.replace('foo', 'grault')
 'grault bar grault baz grault qux'
 
 >>> 'foo bar foo baz foo qux'.replace('foo', 'grault', 2)
 'grault bar grault baz foo qux'
+```
 
-
-s.rstrip([<chars>])
+## s.rstrip([<chars>])
 Trims trailing characters from a string.
 
+```python
 >>> '   foo bar baz   '.rstrip()
 '   foo bar baz'
 
 >>> 'foo.$$$;'.rstrip(';$.')
 'foo'
+```
 
-s.strip([<chars>])
+## s.strip([<chars>])
 Strips characters from the left and right ends of a string.
 
->>> 'www.realpython.com'.strip('w.moc')
-'realpython'
+```python
+>>> 'www.python.com'.strip('w.moc')
+'python'
+```
 
-'''
 
+## Converting Between Strings and Lists
 
-# Converting Between Strings and Lists
+### s.join(<iterable>)
 
-'''
-s.join(<iterable>)
 Concatenates strings from an iterable.
 
+```python
 >>> ', '.join(['foo', 'bar', 'baz', 'qux'])
 'foo, bar, baz, qux'
 
@@ -179,11 +182,12 @@ Traceback (most recent call last):
   File "<pyshell#0>", line 1, in <module>
     '---'.join(['foo', 23, 'bar'])
 TypeError: sequence item 1: expected str instance, int found
+```
 
-
-s.partition(<sep>)
+## s.partition(<sep>)
 Divides a string based on a separator.
 
+```python
 >>> 'foo.bar'.partition('.')
 ('foo', '.', 'bar')
 >>> 'foo@@bar@@baz'.partition('@@')
@@ -191,15 +195,14 @@ Divides a string based on a separator.
 
 >>> 'foo.bar'.partition('@@')
 ('foo.bar', '', '')
+```
 
-s.split(sep=None, maxsplit=-1)
+## s.split(sep=None, maxsplit=-1)
 Splits a string into a list of substrings.
 
->>> 'www.realpython.com'.split('.', maxsplit=1)
-['www', 'realpython.com']
->>> 'www.realpython.com'.rsplit('.', maxsplit=1)
-['www.realpython', 'com']
-
-
-'''
-
+```python
+>>> 'www.python.com'.split('.', maxsplit=1)
+['www', 'python.com']
+>>> 'www.python.com'.rsplit('.', maxsplit=1)
+['www.python', 'com']
+```

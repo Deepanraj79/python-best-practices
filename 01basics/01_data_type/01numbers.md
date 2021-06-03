@@ -1,27 +1,37 @@
+
 # Integers
 
-# In Python, you can’t use commas to group digits in integer literals, but you can use underscores (_)
+In Python, you can’t use commas to group digits in integer literals, but you can use underscores (_)
 
+```python
 print(1000000)
 print(1_000_000)
+```
 
-# Floating point numbers
+## Floating point numbers
 
+```python
 print(1000000.0)  # 1000000.0
 print(1_000_000.0)  # 1000000.0
+```
 
-# Floating point using Exponential notation - E notation
+## Floating point using Exponential notation - E notation
 
+```python
 print(1e6)  # 1000000.0
+```
 
-# Python also uses E notation to display large floating-point numbers:
+## Python also uses E notation to display large floating-point numbers:
 
+```python
 print(200000000000000000.0)  # 2e+17
+```
 
-# When you reach the maximum floating-point number, Python returns a special float value, inf:
+## When you reach the maximum floating-point number, Python returns a special float value, inf:
 
+```python
 print(2e308)  # inf
-
+```
 
 # Math Functions and Number Methods
 
@@ -32,77 +42,81 @@ print(2e308)  # inf
 '''
 
 
-# round()
+## round()
 
-'''
+```python
 >>> round(2.3)
 2
 
 >>> round(2.7)
 3
+```
 
 round() has some unexpected behavior when the number ends in .5: Python 3 rounds numbers according to a
 strategy called rounding ties to even. A tie is any number whose last digit is five. If that digit is even, then you
 round down. If the digit is odd, then you round up.
 
+```python
 >>> round(2.5)
 2
-
 >>> round(3.5)
 4
+```
 
 You can round a number to a given number of decimal places by passing a second argument to round():
 
+```python
 >>> round(3.14159, 3)
 3.142
 
 >>> round(2.71828, 2)
 2.72
+```
 
 The second argument of round() must be an integer. If it isn’t, then Python raises a TypeError:
 
+```python
 >>> round(2.65, 1.4)
 
 Traceback (most recent call last):
   File "<pyshell#0>", line 1, in <module>
     round(2.65, 1.4)
 TypeError: 'float' object cannot be interpreted as an integer
-'''
+```
 
+## abs
 
-# abs
-
-'''
 abs() always returns a positive number of the same type as its argument. That is, the absolute value of an
 integer is always a positive integer, and the absolute value of a float is always a positive float.
 
+```python
 >>> abs(3)
 3
-
 >>> abs(-5.0)
 5.0
-'''
+```
 
-# pow
+## pow
 
-'''
 pow() takes two arguments. The first argument is the base, or the number to be raised to a power, and the
 second argument is the exponent, or the power to which the number is to be raised.
 
+```python
 >>> pow(2, 3)
 8
+```
 
 Also the pow() accepts third optional argument. First, 2 is raised to the power 3 to get 8. Then 8 % 2 is calculated,
 which is 0 because 2 divides 8 with no remainder.
 
+```python
 >>> pow(2, 3, 2)
 0
+```
 
-'''
+## Check if a Float Is integral
 
-# Check if a Float Is integral
-
-'''
+```python
 >>> num = 2.5
 >>> num.is_integer()
 False
@@ -110,13 +124,13 @@ False
 >>> num = 2.0
 >>> num.is_integer()
 True
-'''
+```
 
-# Print the number in style
+## Print the number in style
 
-'''
 You can do this with f-strings by surrounding a variable assigned to a number with curly braces
 
+```python
 >>> n = 7.125
 >>> f"The value of n is {n}"
 'The value of n is 7.125'
@@ -134,5 +148,4 @@ You can do this with f-strings by surrounding a variable assigned to a number wi
 'The value of n is 1.00'
 >>> f"The value of n is {n:.3f}"
 'The value of n is 1.000'
-
-'''
+```
