@@ -13,8 +13,8 @@ def user_id_validator(source_function):
 def sample_function(arg1, arg2):
     """Basic doc string format of reStructuredText
 
-    :param int arg1:
-    :param str arg2:
+    :param int arg1: Description of the argument 1
+    :param str arg2: Description of the argument 2
     :return int: Addition of two number
     """
     pass
