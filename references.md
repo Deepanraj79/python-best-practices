@@ -20,3 +20,7 @@ https://docs.python-guide.org/writing/style/
 
 https://towardsdatascience.com/15-things-you-should-know-about-dictionaries-in-python-44c55e75405c
 
+ 
+# Python Speed
+
+https://pythonspeed.com/memory/#pandas

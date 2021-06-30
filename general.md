@@ -51,3 +51,12 @@ _ = gettext.gettext
 print(_('This is a translatable string.'))
 ```
 
+# Quick Snippet
+
+## Find a length of each element in a array
+
+```python
+>>> list(map(len, ['abc', 'de', 'fghi']))
+[3, 2, 4]
+```
+
